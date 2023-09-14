@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Details</title>
+</head>
+<body>
+    <h1>Animation Details</h1>
+    
+    <h2>{{ anim.title }}</h2>
+    <p>Description: {{ anim.description }}</p>
+    
+    <h3>Images:</h3>
+    <ul>
+        {% for image in images %}
+            <li><img src="{{ image.url }}" alt="{{ image.title }}"></li>
+        {% endfor %}
+    </ul>
+    
+</body>
+</html>

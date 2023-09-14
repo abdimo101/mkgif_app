@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Make GIF</title>
+    </head>
+    <body>
+        <header>
+            <h1>Make GIF Animations</h1>
+        </header>
+        <main>
+            <p>My GIF Animations:</p>
+            <table>
+                {% for anim in anims %}
+                <tr>
+                <td>{{ anim.pk }}</td>
+                <td><a href="{% url 'mkgif:details' anim.pk %}">{{ anim.name }}</a></td>
+                </tr>
+                {% endfor %}
+            </table>
+            <hr>
+            <form action="{% url 'mkgif:index' %}" method="POST" enctype="multipart/form-data">
+                <fieldset>
+                    <legend><label>Add New GIF Animation</label></legend>
+                    {% csrf_token %}
+                    <input name="name" type="text" placeholder="Animation name">
+                    <input name="imgs" type="file" multiple>
+                    <button>Submit</button>
+                </fieldset>
+            </form>
+        </main>
+    </body>
+</html>
