@@ -4,11 +4,24 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Make GIF</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/holiday.css@0.9.8" />
     </head>
     <body>
         <header>
             <h1>Make GIF Animations</h1>
         </header>
+        <nav>
+            <ul>
+               <li><a href="{% url 'mkgif:index' %}">Home</a></li>
+               <li>
+                  <span>{{ user }}</span>
+                  <ul>
+                     <li><a href="{% url 'logout' %}">Logout</a></li>
+                  </ul>
+                  </span>
+               </li>
+            </ul>
+         </nav>
         <main>
             <p>My GIF Animations:</p>
             <table>

@@ -55,7 +55,7 @@ ROOT_URLCONF = 'mkgif_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -67,6 +67,10 @@ TEMPLATES = [
         },
     },
 ]
+
+# Authentication
+LOGIN_REDIRECT_UR = '/'
+LOGOUT_REDIRECT_URL = '/'
 
 WSGI_APPLICATION = 'mkgif_project.wsgi.application'
 
